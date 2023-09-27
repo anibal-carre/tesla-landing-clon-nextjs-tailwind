@@ -1,6 +1,40 @@
+"use client";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 const HeroSection = () => {
+  const modelAnimation = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
+  const priceAnimation = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
+  const descriptionAnimation = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+    },
+  };
   return (
     <section className="w-full h-screen relative flex flex-col justify-end items-center ">
       <video
@@ -12,11 +46,33 @@ const HeroSection = () => {
       ></video>
 
       <div className="z-10 w-full h-[450px] md:h-[620px] flex flex-col items-center p-5 mb-8 ">
-        <h2 className="text-white text-[40px] font-semibold">Model 3</h2>
-        <p className="text-white text-[20px] font-normal">From $29,740*</p>
-        <p className="text-white text-[12px] font-thin">
+        <motion.h2
+          variants={modelAnimation}
+          initial="hidden"
+          animate="show"
+          transition={{ ease: "easeOut", duration: 0.8 }}
+          className="text-white text-[40px] font-semibold"
+        >
+          Model 3
+        </motion.h2>
+        <motion.p
+          variants={priceAnimation}
+          initial="hidden"
+          animate="show"
+          transition={{ ease: "easeOut", duration: 2 }}
+          className="text-white text-[20px] font-normal"
+        >
+          From $29,740*
+        </motion.p>
+        <motion.p
+          variants={descriptionAnimation}
+          initial="hidden"
+          animate="show"
+          transition={{ ease: "easeOut", duration: 2 }}
+          className="text-white text-[12px] font-thin"
+        >
           After Federal Tax Credit & Est. Gas Savings
-        </p>
+        </motion.p>
       </div>
       <div className="z-10 w-full flex flex-col md:flex-row md:justify-center items-center mb-8 gap-5">
         <button className="w-[342px] h-[40px] rounded-[3px] bg-[#ffffffcc] font-semibold">
