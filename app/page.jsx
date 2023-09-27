@@ -1,18 +1,23 @@
+import CarSection from "@/components/CarSections";
 import HeroSection from "@/components/HeroSection";
 import NavBar from "@/components/NavBar";
 
 export default function Home() {
   return (
-    <div className="w-[100vw] h-auto bg-zinc-900">
+    <div className="w-[100vw] h-screen bg-zinc-900 overflow-y-auto overflow-x-hidden scroll-smooth snap-y snap-mandatory relative ">
       <NavBar />
-      <HeroSection />
-      <video
-        className="flex object-center object-cover h-screen w-full"
-        src="./public_video (2).webm"
-        muted
-        autoPlay
-        loop
-      ></video>
+      <div className=" snap-center">
+        <HeroSection />
+      </div>
+      <div className=" snap-center">
+        <CarSection />
+      </div>
+      <div className="snap-center">
+        <CarSection />
+      </div>
+      <div className="snap-center">
+        <CarSection />
+      </div>
     </div>
   );
 }
