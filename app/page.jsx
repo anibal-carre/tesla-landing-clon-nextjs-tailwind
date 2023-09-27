@@ -10,13 +10,43 @@ export default function Home() {
         <HeroSection />
       </div>
       <div className=" snap-center">
-        <CarSection />
+        <CarSection
+          model={"Model Y"}
+          price={"From $39,390*"}
+          description={"After Federal Tax Credit & Est. Gas Savings"}
+          bottomText={
+            "*Price before incentives and savings is $50,490, excluding taxes and fees. Subject to change."
+          }
+          image={"./model-y.avif"}
+          text1={"#171a20"}
+          text2={"#171a20"}
+        />
       </div>
       <div className="snap-center">
-        <CarSection />
+        <CarSection
+          model={"Model S"}
+          price={"From $71,090*"}
+          description={"After Est. Gas Savings"}
+          bottomText={
+            "*Price before savings is $74,990, excluding taxes and fees. Subject to change."
+          }
+          image={"./model-s.avif"}
+          text1={"#171a20"}
+          text2={"#171a20"}
+        />
       </div>
       <div className="snap-center">
-        <CarSection />
+        <CarSection
+          model={"Model X"}
+          price={"From $68,590*"}
+          description={"After Federal Tax Credit & Est. Gas Savings"}
+          bottomText={
+            "*Price before incentives and savings is $79,990, excluding taxes and fees. Subject to change."
+          }
+          text1={"#171a20"}
+          text2={"white"}
+          image={"./model-x.avif"}
+        />
       </div>
     </div>
   );
