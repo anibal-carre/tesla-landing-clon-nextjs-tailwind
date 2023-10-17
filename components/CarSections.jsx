@@ -1,4 +1,6 @@
 "use client";
+
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -13,6 +15,39 @@ const CarSection = ({
   link = "#",
 }) => {
   const router = useRouter();
+
+  const modelAnimation = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
+  const priceAnimation = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
+  const descriptionAnimation = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+    },
+  };
   return (
     <section className="w-full h-screen relative flex flex-col justify-end items-center ">
       <img
@@ -21,9 +56,35 @@ const CarSection = ({
       />
 
       <div className="z-10 w-full h-[450px] md:h-[620px] flex flex-col items-center p-5 mb-8 ">
-        <h2 className={`text-[${text1}] text-[40px] font-semibold`}>{model}</h2>
-        <p className={`text-${text1} text-[20px] font-normal`}>{price}</p>
-        <p className="text-[#171a20] text-[12px] font-sm">{description}</p>
+        <motion.h2
+          variants={modelAnimation}
+          initial="hidden"
+          animate="show"
+          transition={{ ease: "easeOut", duration: 0.8 }}
+          className="text-[40px] font-semibold"
+        >
+          {model}
+        </motion.h2>
+
+        <motion.p
+          variants={priceAnimation}
+          initial="hidden"
+          animate="show"
+          transition={{ ease: "easeOut", duration: 1.6 }}
+          className={`text-${text1} text-[20px] font-normal`}
+        >
+          {price}
+        </motion.p>
+
+        <motion.p
+          variants={descriptionAnimation}
+          initial="hidden"
+          animate="show"
+          transition={{ ease: "easeOut", duration: 1.6 }}
+          className="text-[#171a20] text-[12px] font-sm"
+        >
+          {description}
+        </motion.p>
       </div>
       <div className="z-10 w-full flex flex-col md:flex-row md:justify-center items-center mb-8 gap-5">
         <button
