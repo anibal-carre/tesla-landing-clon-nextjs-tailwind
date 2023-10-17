@@ -69,7 +69,7 @@ const HeroSection = () => {
           initial="hidden"
           animate="show"
           transition={{ ease: "easeOut", duration: 2 }}
-          className="text-white text-[12px] font-thin"
+          className="text-white text-[12px] font-sm"
         >
           After Federal Tax Credit & Est. Gas Savings
         </motion.p>

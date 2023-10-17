@@ -1,12 +1,15 @@
 "use client";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 const TeslaLogo = () => {
+  const router = useRouter();
   return (
     <motion.div
-      className="div"
+      className="div cursor-pointer"
       animate={{ y: 0 }}
       initial={{ y: -10 }}
       transition={{ ease: "easeOut", duration: 0.5 }}
+      onClick={() => router.push("/")}
     >
       <svg
         className="h-6 w-28 transition-colors duration-500"

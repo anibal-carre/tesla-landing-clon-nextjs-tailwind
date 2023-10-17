@@ -1,4 +1,6 @@
+"use client";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const CarSection = ({
   model,
@@ -8,7 +10,9 @@ const CarSection = ({
   image,
   text1,
   text2,
+  link = "#",
 }) => {
+  const router = useRouter();
   return (
     <section className="w-full h-screen relative flex flex-col justify-end items-center ">
       <img
@@ -19,13 +23,19 @@ const CarSection = ({
       <div className="z-10 w-full h-[450px] md:h-[620px] flex flex-col items-center p-5 mb-8 ">
         <h2 className={`text-[${text1}] text-[40px] font-semibold`}>{model}</h2>
         <p className={`text-${text1} text-[20px] font-normal`}>{price}</p>
-        <p className="text-[#171a20] text-[12px] font-thin">{description}</p>
+        <p className="text-[#171a20] text-[12px] font-sm">{description}</p>
       </div>
       <div className="z-10 w-full flex flex-col md:flex-row md:justify-center items-center mb-8 gap-5">
-        <button className="w-[342px] h-[40px] rounded-[3px] bg-[#ffffffcc] font-semibold">
+        <button
+          onClick={() => router.push(link)}
+          className="w-[342px] h-[40px] rounded-[3px] bg-[#ffffffcc] font-semibold"
+        >
           Order Now
         </button>
-        <button className="w-[342px] h-[40px] rounded-[3px] bg-[#222222a6] text-white font-semibold">
+        <button
+          onClick={() => router.push(link)}
+          className="w-[342px] h-[40px] rounded-[3px] bg-[#222222a6] text-white font-semibold"
+        >
           Demo Drive
         </button>
       </div>

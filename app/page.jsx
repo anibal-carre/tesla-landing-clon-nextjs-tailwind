@@ -12,6 +12,7 @@ export default function Home() {
       <div className=" snap-center">
         <CarSection
           model={"Model Y"}
+          link={"/modely"}
           price={"From $39,390*"}
           description={"After Federal Tax Credit & Est. Gas Savings"}
           bottomText={
@@ -25,6 +26,7 @@ export default function Home() {
       <div className="snap-center">
         <CarSection
           model={"Model S"}
+          link={"/models"}
           price={"From $71,090*"}
           description={"After Est. Gas Savings"}
           bottomText={
@@ -38,6 +40,7 @@ export default function Home() {
       <div className="snap-center">
         <CarSection
           model={"Model X"}
+          link={"/modelx"}
           price={"From $68,590*"}
           description={"After Federal Tax Credit & Est. Gas Savings"}
           bottomText={
